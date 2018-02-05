@@ -3,7 +3,7 @@ package com.javagists.adapter.design.pattern;
 import java.util.stream.IntStream;
 /**
  * 
- * https://www.javagists.com
+ * https://www.javagists.com/adapter-design-pattern
  * 
  * w w w . j a v a g i s t s . c o m
  * @author T Tak
