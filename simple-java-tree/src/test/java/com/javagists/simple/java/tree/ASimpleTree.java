@@ -2,7 +2,11 @@ package com.javagists.simple.java.tree;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 
+ * @author https://www.javagists.com/java-tree-data-structure
+ *
+ */
 public class ASimpleTree {
 
 	public static void main(String[] args) {
