@@ -20,7 +20,11 @@ import org.springframework.stereotype.Component;
 
 import com.javagists.jerseyfilms.model.Film;
 import com.javagists.jerseyfilms.service.FilmService;
-
+/**
+ * 
+ * @author javagists.com
+ *
+ */
 @Component
 @Path("/films")
 public class FilmController {

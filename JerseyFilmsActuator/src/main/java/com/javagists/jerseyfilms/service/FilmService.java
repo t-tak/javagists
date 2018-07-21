@@ -2,8 +2,8 @@ package com.javagists.jerseyfilms.service;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 import org.springframework.stereotype.Service;
 
@@ -12,10 +12,14 @@ import com.javagists.jerseyfilms.model.Film;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Tags;
-
+/**
+ * 
+ * @author javagists.com
+ *
+ */
 @Service
 public class FilmService {
-	private final ConcurrentMap<String, Film> db;
+	private final Map<String, Film> db;
 	private Counter adds, mods, deletes;
 	
 	public FilmService(MeterRegistry registry) {

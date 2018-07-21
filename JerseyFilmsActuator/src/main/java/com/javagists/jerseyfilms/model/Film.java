@@ -1,5 +1,9 @@
 package com.javagists.jerseyfilms.model;
-
+/**
+ * 
+ * @author javagists.com
+ *
+ */
 public class Film {
 	private String id;
 	private String name;
