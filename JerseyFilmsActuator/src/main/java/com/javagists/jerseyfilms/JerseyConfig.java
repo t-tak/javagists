@@ -7,7 +7,7 @@ import com.javagists.jerseyfilms.controller.FilmController;
 
 @Component
 public class JerseyConfig extends ResourceConfig {
-	public JerseyConfig() {
-		register(FilmController.class);
-	}
+    public JerseyConfig() {
+        register(FilmController.class);
+    }
 }

@@ -14,17 +14,17 @@ import com.javagists.jerseyfilms.service.FilmService;
 @Component
 @WebEndpoint(id = "genre")
 public class GenreDistribution {
-	
-	@Autowired
-	FilmService fs;
-	
-	@ReadOperation
-	public ConcurrentMap<String, Integer> getGenreDistribution() {
-		ConcurrentMap<String, Integer> gd = new ConcurrentHashMap<>();
-		for (Film f : this.fs.getAllFilms()) {
-			String key = f.getGenre().toString();
-			gd.put(key, gd.getOrDefault(key, 0)+1);
-		}
-		return gd;
-	}
+
+    @Autowired
+    FilmService fs;
+
+    @ReadOperation
+    public ConcurrentMap<String, Integer> getGenreDistribution() {
+        ConcurrentMap<String, Integer> gd = new ConcurrentHashMap<>();
+        for (Film f : this.fs.getAllFilms()) {
+            String key = f.getGenre().toString();
+            gd.put(key, gd.getOrDefault(key, 0)+1);
+        }
+        return gd;
+    }
 }
