@@ -11,10 +11,10 @@ import javax.ws.rs.ext.Provider;
 
 @Provider
 public class FilmExceptionMapper implements ExceptionMapper<Throwable> {
-	
-	@Override
-	public Response toResponse(Throwable e) {
-		return Response.serverError().entity(e.getMessage()).build();
-	}
+
+    @Override
+    public Response toResponse(Throwable e) {
+        return Response.serverError().entity(e.getMessage()).build();
+    }
 
 }

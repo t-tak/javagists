@@ -1,20 +1,45 @@
 package com.javagists.jerseyfilms.service;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 import org.springframework.stereotype.Service;
 
 import com.javagists.jerseyfilms.model.Film;
+import com.javagists.jerseyfilms.model.Genre;
 
 @Service
 public class FilmService {
+
+    private static final String[] data = {
+            "1", "Freedom Writers", "2007", "DRAMA",
+            "2", "Reno 911!: Miami", "2007", "COMEDY",
+            // String id, String name, String year, String genre
+    } ;
 	private final ConcurrentMap<String, Film> db;
 	
 	public FilmService() {
 		this.db = new ConcurrentHashMap<>();
+		this.initializeDatabase();
+	}
+
+	// Adds a few films to the database.
+	protected void initializeDatabase() {
+		Iterator<String> l = Arrays.asList(data).iterator();
+		if(this.db.isEmpty()) {
+			while (l.hasNext()) {
+				Film f = new Film();
+				f.setId(l.next());
+				f.setName(l.next());
+				f.setYear(l.next());
+				f.setGenre(Genre.valueOf(l.next()));
+				this.db.put(f.getId(), f);
+			}
+		}
 	}
 	
 	// Get all the films stored in the database

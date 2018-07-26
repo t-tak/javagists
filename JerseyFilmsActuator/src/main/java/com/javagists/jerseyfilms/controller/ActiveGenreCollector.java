@@ -16,21 +16,21 @@ import com.javagists.jerseyfilms.service.FilmService;
  */
 @Component
 public class ActiveGenreCollector implements HealthIndicator {
-	
-	@Autowired
-	FilmService fs;
 
-	@Override
-	public Health health() {
-		HashSet<String> activeGenres = new HashSet<String>();
-		String status = "None";
-		for (Film f : fs.getAllFilms()) {
-			activeGenres.add(f.getGenre().toString());
-		}
-		if(!activeGenres.isEmpty()) {
-			status = activeGenres.toString();
-		}
-		return new Health.Builder().up().withDetail("Active Genres", status).build();
-	}
+    @Autowired
+    FilmService fs;
+
+    @Override
+    public Health health() {
+        HashSet<String> activeGenres = new HashSet<String>();
+        String status = "None";
+        for (Film f : fs.getAllFilms()) {
+            activeGenres.add(f.getGenre().toString());
+        }
+        if(!activeGenres.isEmpty()) {
+            status = activeGenres.toString();
+        }
+        return new Health.Builder().up().withDetail("Active Genres", status).build();
+    }
 
 }
