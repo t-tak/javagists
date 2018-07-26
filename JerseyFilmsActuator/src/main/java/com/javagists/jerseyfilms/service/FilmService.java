@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 import org.springframework.stereotype.Service;
 
@@ -15,7 +14,11 @@ import com.javagists.jerseyfilms.model.Genre;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Tags;
-
+/**
+ * 
+ * @author javagists.com
+ *
+ */
 @Service
 public class FilmService {
 
