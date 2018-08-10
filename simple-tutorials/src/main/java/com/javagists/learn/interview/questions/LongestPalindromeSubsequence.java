@@ -1,5 +1,9 @@
 package com.javagists.learn.interview.questions;
-
+/**
+ * 
+ * @author javagists.com
+ *
+ */
 public class LongestPalindromeSubsequence {
 	public int longestPalindromeSubseq(String input) {
 		int[][] dp = new int[input.length()][input.length()];
